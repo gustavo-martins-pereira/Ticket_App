@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -18,8 +19,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
-    _selectedIndex = index;
-    print("Tapped in $_selectedIndex");
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -28,11 +30,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
       appBar: AppBar(
         title: const Text("My Tickets"),
       ),
-      body: const Center(
-        child: Text("Ticket Info"),
+      body: Center(
+        child: appScreens[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: const Color(0xFF526400),
         showSelectedLabels: false,
