@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../base/res/styles/app_styles.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -16,28 +18,28 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning", style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                        )),
-                        SizedBox(height: 5),
-                        Text("Book tickets", style: TextStyle(
-                          color: Color(0xFF3B3B3B),
-                          fontSize: 26,
-                          fontWeight: FontWeight.w500,
-                        ))
+                        Text("Good Morning", style: AppStyles.headLineStyle2),
+                        const SizedBox(height: 5),
+                        Text("Book tickets", style: AppStyles.headLineStyle1)
                       ],
                     ),
+
                     Container(
-                      color: Colors.deepPurpleAccent,
                       width: 50,
                       height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                          image: AssetImage("assets/images/logo.png"),
+                        ),
+                      ),
                     )
                   ],
                 ),
+
                 // ===== SEARCH BAR =====
                 const Row(
                   children: [
