@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/widgets/app_double_text.dart';
 
 import '../base/res/media.dart';
 import '../base/res/styles/app_styles.dart';
@@ -14,6 +15,8 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(height: 40),
+
+          // ===== HEADER =====
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -25,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning", style: AppStyles.headLineStyle2),
+                        Text("Good Morning", style: AppStyles.headLineStyle3),
                         const SizedBox(height: 5),
                         Text("Book tickets", style: AppStyles.headLineStyle1),
                       ],
@@ -62,6 +65,10 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 40),
+
+          // ===== UPCOMING FLIGHTS =====
+          const AppDoubleText(bigText: "Upcoming flights", smallText: "View All"),
         ],
       ),
     );

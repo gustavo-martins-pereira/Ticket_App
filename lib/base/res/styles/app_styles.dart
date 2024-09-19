@@ -7,13 +7,25 @@ class AppStyles {
   static Color textColor = const Color(0xFF3B3B3B);
   static Color bgColor = const Color(0xFFEEEDF2);
 
+  static TextStyle textStyle = TextStyle(
+    color: textColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle headLineStyle1 = TextStyle(
     color: textColor,
     fontSize: 26,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle headLineStyle2 = const TextStyle(
+  static TextStyle headLineStyle2 = TextStyle(
+    color: textColor,
+    fontSize: 21,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle headLineStyle3 = const TextStyle(
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );
