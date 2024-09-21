@@ -57,7 +57,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
             label: "Profile",
           ),
-        ]
+        ],
       ),
     );
   }
