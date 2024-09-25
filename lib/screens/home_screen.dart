@@ -5,6 +5,7 @@ import 'package:ticket_app/base/widgets/ticket_view_widget.dart';
 
 import '../base/res/media.dart';
 import '../base/res/styles/app_styles.dart';
+import '../base/utils/all_json.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -69,7 +70,12 @@ class HomeScreen extends StatelessWidget {
                 // ========== UPCOMING FLIGHTS ==========
                 const AppDoubleText(bigText: "Upcoming flights", smallText: "View All"),
                 const SizedBox(height: 20),
-                const TicketView(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ticketList.map((ticket) => TicketView(ticketData: ticket)).toList(),
+                  ),
+                ),
               ],
             ),
           ),

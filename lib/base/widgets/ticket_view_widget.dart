@@ -5,7 +5,8 @@ import 'package:ticket_app/base/widgets/big_circle.dart';
 import 'package:ticket_app/base/widgets/big_dot_widget.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticketData;
+  const TicketView({super.key, required this.ticketData});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       // == DEPARTURE ==
-                      Text("NYC", style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
+                      Text(ticketData["from"]["code"], style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
                       Expanded(child: Container()),
 
                       // == PLANE ==
@@ -53,7 +54,7 @@ class TicketView extends StatelessWidget {
 
                       // == DESTINATION ==
                       Expanded(child: Container()),
-                      Text("LDN", style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
+                      Text(ticketData["to"]["code"], style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -63,14 +64,14 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: Text("New-York", style: AppStyles.headLineStyle4.copyWith(color: Colors.white))
+                        child: Text(ticketData["from"]["name"], style: AppStyles.headLineStyle4.copyWith(color: Colors.white))
                       ),
                       Expanded(child: Container()),
-                      Text("8H 30M", style: AppStyles.headLineStyle4.copyWith(color: Colors.white)),
+                      Text(ticketData["flying_time"], style: AppStyles.headLineStyle4.copyWith(color: Colors.white)),
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
-                        child: Text("London", style: AppStyles.headLineStyle4.copyWith(color: Colors.white), textAlign: TextAlign.end)
+                        child: Text(ticketData["to"]["name"], style: AppStyles.headLineStyle4.copyWith(color: Colors.white), textAlign: TextAlign.end)
                       ),
                     ],
                   ),
@@ -115,18 +116,18 @@ class TicketView extends StatelessWidget {
                       // == DEPARTURE ==
                       SizedBox(
                         width: 100,
-                        child: Text("1 May".toUpperCase(), style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
+                        child: Text(ticketData["date"].toUpperCase(), style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
                       ),
                       Expanded(child: Container()),
 
                       // == PLANE ==
-                      Text("08:00 AM", style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
+                      Text(ticketData["departure_time"], style: AppStyles.headLineStyle3.copyWith(color: Colors.white)),
 
                       // == DESTINATION ==
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
-                        child: Text("23", style: AppStyles.headLineStyle3.copyWith(color: Colors.white), textAlign: TextAlign.end),
+                        child: Text(ticketData["number"].toString(), style: AppStyles.headLineStyle3.copyWith(color: Colors.white), textAlign: TextAlign.end),
                       ),
                     ],
                   ),
