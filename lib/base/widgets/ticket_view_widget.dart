@@ -6,7 +6,9 @@ import 'package:ticket_app/base/widgets/big_dot_widget.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticketData;
-  const TicketView({super.key, required this.ticketData});
+  final bool wholeScreen;
+
+  const TicketView({super.key, required this.ticketData, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class TicketView extends StatelessWidget {
       width: size.width * 0.85,
       height: 190,
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: wholeScreen ? 0 : 16),
         child: Column(
           children: [
             // ========== TOP ==========

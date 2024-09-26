@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                   child: const Row(
                     children: [
                       Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205)),
-                      Text("Search",)
+                      Text("Search"),
                     ],
                   ),
                 ),
