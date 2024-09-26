@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class AppDoubleText extends StatelessWidget {
-  const AppDoubleText({super.key, required this.bigText, required this.smallText});
+  const AppDoubleText({super.key, required this.bigText, required this.smallText, required this.function});
 
   final String bigText;
   final String smallText;
+  final VoidCallback function;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AppDoubleText extends StatelessWidget {
         Text(bigText, style: AppStyles.headLineStyle2),
 
         InkWell(
-          onTap: () => Navigator.pushNamed(context, "all_tickets"),
+          onTap: function,
           child: Text(smallText, style: AppStyles.textStyle.copyWith(
             color: AppStyles.primaryColor,
           )),
