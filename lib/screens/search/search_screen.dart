@@ -3,6 +3,9 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:ticket_app/screens/search/widgets/find_tickets.dart';
+import 'package:ticket_app/screens/search/widgets/ticket_promotion.dart';
+
+import '../../base/widgets/app_double_text_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -19,6 +22,7 @@ class SearchScreen extends StatelessWidget {
           Text("What are\nyou looking for?", style: AppStyles.headLineStyle1.copyWith(fontSize: 25)),
           const SizedBox(height: 20),
 
+
           // ========== FIND TICKETS ==========
           const AppTicketTabs(),
           const SizedBox(height: 20),
@@ -29,7 +33,17 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(height: 10),
 
           const FindTickets(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
+
+
+          // ========== FIND TICKETS ==========
+          AppDoubleText(
+            bigText: "Upcoming flights",
+            smallText: "View All",
+            function: () => Navigator.pushNamed(context, "all_tickets"),
+          ),
+          const SizedBox(height: 10),
+          const TicketPromotion(),
         ],
       ),
     );
