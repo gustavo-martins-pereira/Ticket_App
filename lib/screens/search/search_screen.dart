@@ -24,7 +24,10 @@ class SearchScreen extends StatelessWidget {
 
 
           // ========== FIND TICKETS ==========
-          const AppTicketTabs(),
+          const AppTicketTabs(
+            firstTab: "All Tickets",
+            secondTab: "Hotels",
+          ),
           const SizedBox(height: 20),
 
           const AppTextIcon(icon: Icons.flight_takeoff_rounded, text: "Departure"),

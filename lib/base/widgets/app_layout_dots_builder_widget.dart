@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class AppLayoutDotsBuilderWidget extends StatelessWidget {
   final int randomDivider;
   final double detachWidth;
+  final bool? isColor;
 
-  const AppLayoutDotsBuilderWidget ({super.key, required this.randomDivider, this.detachWidth = 3});
+  const AppLayoutDotsBuilderWidget ({super.key, required this.randomDivider, this.detachWidth = 3, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class AppLayoutDotsBuilderWidget extends StatelessWidget {
         children: List.generate((constraints.constrainWidth() / randomDivider).floor(), (index) => SizedBox(
           width: detachWidth,
           height: 1,
-          child: const DecoratedBox(
+          child: DecoratedBox(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: isColor == null ? Colors.white : Colors.grey.shade300,
             ),
           ),
         )),

@@ -3,8 +3,9 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class BigCircle extends StatelessWidget {
   final bool isRight;
+  final bool? isColor;
 
-  const BigCircle({super.key, required this.isRight});
+  const BigCircle({super.key, required this.isRight, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class BigCircle extends StatelessWidget {
       height: 20,
       child: DecoratedBox(
         decoration: BoxDecoration(
-            color: AppStyles.bgColor,
+            color: isColor == null ? AppStyles.bgColor : Colors.grey.shade200,
             borderRadius: isRight ? const BorderRadius.only(
               topRight: Radius.circular(10),
               bottomRight: Radius.circular(10),
